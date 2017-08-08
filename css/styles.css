@@ -1,0 +1,33 @@
+#quiz {
+font-size: 20px;
+}
+
+label {
+	cursor: pointer;
+}
+
+.answers {
+  margin-bottom: 20px;
+}
+
+.answers label{
+   display: block;
+}
+
+#submit{
+    font-size: 20px;
+    background-color: grey;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#submit:hover{
+    background-color: red;
+}
+
+body{
+    font-family: Verdana;
+ }
