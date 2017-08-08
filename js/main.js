@@ -24,7 +24,7 @@
   }
 
   function showResults() {
-    
+
     var answerContainers = quizContainer.querySelectorAll(".answers"); //gather answer containers from our quiz
 
     var numCorrect = 0; //track user's answers
@@ -39,15 +39,15 @@
         answerContainers[questionNumber].lastElementChild.style.color = "green" //color answers green
 
           if(questionNumber===0) {
-          let addText = document.createTextNode("Quelle histoire!");
+          let addText = document.createTextNode(" >> Quelle histoire!");
           answerContainers[questionNumber].lastElementChild.appendChild(addText);
           }
           if(questionNumber===1) {
-          let addText = document.createTextNode("Each banana is known as a finger");
+          let addText = document.createTextNode(" >> Each banana is known as a finger");
           answerContainers[questionNumber].lastElementChild.appendChild(addText);
           }
           if(questionNumber===2) {
-          let addText = document.createTextNode("In 1995");
+          let addText = document.createTextNode(" >> In 1995");
           answerContainers[questionNumber].lastElementChild.appendChild(addText);
           }
           if(questionNumber===4) {
@@ -72,6 +72,7 @@
     });
 
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;//show number of correct answers out of total
+    
     if(numCorrect===myQuestions.length) {
             var tick = document.createElement("img");
             tick.setAttribute("src", "images/tick.png");
@@ -81,7 +82,15 @@
             tick.id ="tick-to-expand";
             tick.style.position ="absolute";
             document.getElementById("results").appendChild(tick);
-    } 
+    } else {
+          var addButton = document.createElement("button");
+          addButton.id = "fullReset";
+          addButton.textContent = "Try Again";
+          document.getElementById("results").appendChild(addButton);
+          }
+            document.getElementById("fullReset").onclick = function() {
+            location.reload();
+            };
 }
 
   var quizContainer = document.getElementById("quiz");
@@ -141,6 +150,7 @@
   submitButton.addEventListener("click", showResults); //on submit, show results
 
 
+ 
 
 
 
